@@ -1,7 +1,12 @@
+import { Discount } from './Discount';
 import { CartItem } from './interfaces/CartItem'
-import { OrderStatus } from './interfaces/OrderStatus';
+
 export class ShoopingCart { // SRP 
     private readonly _items: CartItem[] = [];
+
+    constructor(
+        private readonly discount: Discount
+    ) { }
 
     addItem(item: CartItem): void {
         this._items.push(item);
@@ -19,6 +24,10 @@ export class ShoopingCart { // SRP
         return this._items.reduce((total, next) => total + next.price, 0);
     }
 
+    totalWithDiscount(): number {
+        return this.discount.calculate(this.total());
+    }
+
     isEmpty(): boolean {
         return this._items.length === 0;
     }
@@ -32,5 +41,4 @@ export class ShoopingCart { // SRP
     * deixar somente métodos necessários.
     * validação pode ser considerada uma responsabilidade a parte.
     * cada método deve ter uma responsabilidade.
-    *  
 */

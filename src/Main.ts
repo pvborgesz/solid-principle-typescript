@@ -9,6 +9,14 @@ import { FiftyPercentDiscount } from "./ocp/classes/Discount";
     * OCP -> Entendidades devem estar abertas para extensão, mas fechadas para modificação.
 */
 
+/*
+    * LSP -> Se meu programa espera um Animal, algo do tipo Cachorro(que herda de Animal) deve servir como qualquer outro Animal.
+    * Em qualquer lugar que eu esperar algo do tipo Discount no meu programa,
+    * eu devo ter sempre o mesmo comportamento em qualquer uma das classes do 'contexto'.
+    * Em linguagens tipadas, é mais dificil quebrar esse princípio. 
+    * As subclasses não devem furar o comportamento da classe base. 
+*/
+
 function Main(): void {
     const discount = new FiftyPercentDiscount();
     const shoppingCart = new ShoopingCart(discount); //injeção de dependendência no carrinho.

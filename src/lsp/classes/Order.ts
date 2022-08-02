@@ -19,8 +19,7 @@ export class Order {
     checkout(): void {
         if (this.cart.isEmpty()) console.log("Seu carrinho está vazio");
         this._orderStatus = 'closed';
-        this
-        this.messaging.sendMessage('Seu pedido foi recebido com total de : ' + this.cart.total().toFixed(2));
+        this.messaging.sendMessage('Seu pedido foi recebido com total de : ' + this.cart.totalWithDiscount().toFixed(2));
         this.persistence.saveOrder();
         this.cart.clear();
         return;
