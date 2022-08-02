@@ -3,14 +3,14 @@ import { ShoopingCart } from "./ocp/classes/ShoppingCart";
 import { Messaging } from "./ocp/classes/Messaging";
 import { Persistence } from "./ocp/classes/Persistence";
 import { Product } from "./ocp/classes/Product";
-import { NoDiscount } from "./ocp/classes/Discount";
+import { FiftyPercentDiscount } from "./ocp/classes/Discount";
 
 /*
     * OCP -> Entendidades devem estar abertas para extensão, mas fechadas para modificação.
 */
 
 function Main(): void {
-    const discount = new NoDiscount();
+    const discount = new FiftyPercentDiscount();
     const shoppingCart = new ShoopingCart(discount); //injeção de dependendência no carrinho.
     const messaging = new Messaging();
     const persistence = new Persistence();
