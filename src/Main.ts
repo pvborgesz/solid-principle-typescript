@@ -1,4 +1,4 @@
-import { Order } from "./srp/classes/order";
+import { Order } from "./srp/classes/Order";
 import { ShoopingCart } from "./srp/classes/ShoppingCart";
 import { Messaging } from "./srp/classes/Messaging";
 import { Persistence } from "./srp/classes/Persistence";

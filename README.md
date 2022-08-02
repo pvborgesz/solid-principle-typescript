@@ -1,5 +1,5 @@
 # solid-principle-typescript
-Prática dos princípios SOLID utilizando Typescript. 
+<h2>Prática dos princípios SOLID utilizando Typescript. </h2>
 
 S -> Single Reponsability Principle: Uma classe deve ter apenas um motivo para mudar (evitar conjunções aditivas, cada método deve ter uma responsabilidade). <br/>
 O -> Open/closed Principle: Módulos, classes, objetos e operações devem estar abertos para extensões, mas fechados para modificações.<br/>
